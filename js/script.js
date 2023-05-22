@@ -42,12 +42,18 @@ function createPostHTML(post) {
   textContainer.classList.add("text-container");
   postContainer.append(textContainer);
 
+  const dateElement = document.createElement("p");
+  const postDate = new Date(post.date);
+  const dateOptions = { day: "numeric", month: "numeric", year: "numeric" };
+  const europeanDate = postDate.toLocaleDateString("en-GB", dateOptions);
+  dateElement.innerText = europeanDate;
+
   const titleElement = document.createElement("h3");
   titleElement.innerText = title.rendered;
   titleElement.addEventListener("click", () => {
     window.location.href = `../blogpost.html?id=${id}`;
   })
-  textContainer.append(titleElement);
+  textContainer.append(dateElement, titleElement);
 
   const readMore = document.createElement("a");
   readMore.classList.add("read-link");
@@ -91,33 +97,41 @@ async function main() {
     showSlide(slideIndex);
 
     const nextSlide = () => {
-      if (slideIndex < totalSlidesPerView - 1) {
-        slideIndex++;
-        showSlide(slideIndex);
-      }
-    };
-
-    const prevSlide = () => {
-      if (slideIndex > 0) {
-        slideIndex--;
-        showSlide(slideIndex);
-      }
-    };
-
-    const nextButton = document.querySelector(".scroll-button.right");
-    const prevButton = document.querySelector(".scroll-button.left");
-    nextButton.addEventListener("click", nextSlide);
-    prevButton.addEventListener("click", prevSlide);
-
-    stopLoader();
-    
-  } catch (error) {
-    console.error("Error:", error);
-    displayErrorMessage(resultContainer);
-    stopLoader();
-  }
-}
+        if (slideIndex < totalSlidesPerView - 1) {
+          slideIndex++;
+          showSlide(slideIndex);
+        }
   
+        // Show or hide the left scroll button based on the current slide index
+        prevButton.style.display = slideIndex > 0 ? "block" : "none";
+        };
+  
+        const prevSlide = () => {
+        if (slideIndex > 0) {
+          slideIndex--;
+          showSlide(slideIndex);
+        }
+  
+        // Show or hide the left scroll button based on the current slide index
+        prevButton.style.display = slideIndex > 0 ? "block" : "none";
+        };
+  
+        const nextButton = document.querySelector(".scroll-button.right");
+        const prevButton = document.querySelector(".scroll-button.left");
+        nextButton.addEventListener("click", nextSlide);
+        prevButton.addEventListener("click", prevSlide);
+
+        // Hide the left scroll button initially
+        prevButton.style.display = "none";
+
+        stopLoader();
+
+        } catch (error) {
+        console.error("Error:", error);
+        displayErrorMessage(resultContainer);
+        stopLoader();
+    }
+}
 
 main();
 

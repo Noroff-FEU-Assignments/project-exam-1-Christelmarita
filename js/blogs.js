@@ -47,6 +47,12 @@ function createPostHTML(post) {
   imgContainer.append(image);
   postContainer.append(imgContainer);
 
+  const dateElement = document.createElement("p");
+  const postDate = new Date(post.date);
+  const dateOptions = { day: "numeric", month: "numeric", year: "numeric" };
+  const europeanDate = postDate.toLocaleDateString("en-GB", dateOptions);
+  dateElement.innerText = europeanDate;
+
   const textContainer = document.createElement("div");
   textContainer.classList.add("text-container");
   const titleElement = document.createElement("h3");
@@ -54,7 +60,7 @@ function createPostHTML(post) {
   titleElement.addEventListener("click", () => {
     window.location.href = `../blogpost.html?id=${id}`;
   })
-  textContainer.append(titleElement);
+  textContainer.append(dateElement, titleElement);
   postContainer.append(textContainer);
 
   const readMore = document.createElement("a");
