@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCANDI GAZETTE</title>
+    <script src="https://kit.fontawesome.com/5d82540413.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="js/contact.js" defer type="module"></script>
+    <link href="css/imports/variables.css" rel="stylesheet"/>
+    <link href="css/styles.css" rel="stylesheet"/>
+    <link href="css/media.css" rel="stylesheet"/>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <a href="index.html">
+                  <img class="logo" src="images/sg_logo.png" alt="Scandi Gazette logo">
+                </a>
+              </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class=" nav-link">Home</a></li>
+                <li class="nav-item"><a href="blogs.html" class="nav-link">Blogs</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>    
+                <li class="nav-item"><a href="contact.html" class="active-link nav-link">Contact</a></li> 
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="contact-wrapper">
+            <h1>Contact Us</h1>
+            <p>We’d love to hear from you! Contact us and let’s chat about all things Scandinavian, from culture and lifestyle to history and more.</p>
+            <form id="form-container">
+                <div class="input-container">
+                    <label for="first-name">Name (Required)</label>
+                    <input id="first-name" name="first-name" type="text" placeholder="Name">
+                    <div class="form-error" id="first-name-error">Name must be 5 characters or more</div>
+                </div>
+                <div class="input-container">
+                    <label for="email">Email (Required)</label>
+                    <input id="email" name="email" type="text" placeholder="Email">
+                    <div class="form-error" id="email-error">Please enter a valid email address</div>
+                </div>
+                <div class="input-container">
+                    <label for="subject">Subject (Required)</label>
+                    <input id="subject" name="subject" type="text" placeholder="Subject">
+                    <div class="form-error" id="subject-error">Name must be 15 characters or more</div>
+                </div>
+                <div class="input-container">
+                    <label for="message">Message (Required)</label>
+                    <textarea id="message" name="message" type="text" placeholder="Message"></textarea>
+                    <div class="form-error" id="message-error">Message must be 25 characters or more</div>
+                </div>
+                <button type="submit" class="submitForm">Send</button>
+            </form>
+            <div class="formSuccess">
+                <h2>Message Sent Successfully!</h2>
+                <p>Thank you for contacting us.</p>
+                <button onclick="window.location.href='index.html'">Keep exploring</button>
+            </div>
+        </div>   
+    </main>
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="blogs.html">Blogs</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-icons">
+            <a href="www.facebook.com" aria-label="Link to facebook.com"><i class="fa-brands fa-facebook-f fa-2x" aria-hidden="true"></i></a>
+            <a href="www.instagram.com" aria-label="Link to instagram.com"><i class="fa-brands fa-instagram fa-2x" aria-hidden="true"></i></a>
+            <a href="www.twitter.com" aria-label="Link to twitter.com"><i class="fa-brands fa-twitter fa-2x" aria-hidden="true"></i></a>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+  

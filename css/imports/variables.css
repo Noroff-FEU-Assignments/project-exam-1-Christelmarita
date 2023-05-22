@@ -1,0 +1,7 @@
+:root {
+    --text-main:"montserrat";
+    --text-other:"cormorant";
+    --cta-primary: #fff;
+    --cta-hover: #3B3B3B;
+    --cta-disabled: #A49DA2;
+}
