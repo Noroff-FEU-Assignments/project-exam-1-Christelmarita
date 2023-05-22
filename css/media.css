@@ -134,3 +134,10 @@
     }
 
 }
+
+@media (max-width: 330px) {
+    
+    h3 {
+        font-size: 1.3em;
+    }
+}
