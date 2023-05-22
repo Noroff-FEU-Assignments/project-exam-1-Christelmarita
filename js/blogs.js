@@ -51,6 +51,9 @@ function createPostHTML(post) {
   textContainer.classList.add("text-container");
   const titleElement = document.createElement("h3");
   titleElement.innerText = title.rendered;
+  titleElement.addEventListener("click", () => {
+    window.location.href = `../blogpost.html?id=${id}`;
+  })
   textContainer.append(titleElement);
   postContainer.append(textContainer);
 

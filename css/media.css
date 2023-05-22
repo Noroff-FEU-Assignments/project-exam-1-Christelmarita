@@ -136,6 +136,14 @@
         text-align: center;
     }
 
+    .read-link {
+        display: none;
+    }
+
+    .text-container {
+        height: fit-content;
+    }
+
 }
 
 @media (max-width: 330px) {

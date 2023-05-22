@@ -8,6 +8,8 @@ hamburger.addEventListener("click", () => {
   navMenu.classList.toggle("active");
 });
 
+// FETCH AND CREATE HTML  
+
 async function getPosts() {
   const response = await fetch(fullPostURL);
   if (!response.ok) {
@@ -42,6 +44,9 @@ function createPostHTML(post) {
 
   const titleElement = document.createElement("h3");
   titleElement.innerText = title.rendered;
+  titleElement.addEventListener("click", () => {
+    window.location.href = `../blogpost.html?id=${id}`;
+  })
   textContainer.append(titleElement);
 
   const readMore = document.createElement("a");
@@ -52,6 +57,8 @@ function createPostHTML(post) {
 
   return postContainer;
 }
+
+// MAIN FUNCTION
 
 async function main() {
   try {
