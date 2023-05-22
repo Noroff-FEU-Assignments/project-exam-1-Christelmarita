@@ -69,6 +69,31 @@
 
   }
 
+@media (max-width: 785px) {
+    .main-cont {
+        flex-direction: column;
+    }
+
+    .person-cont {
+        display: flex;
+        flex-direction: column-reverse;
+        max-height: 100%;
+        gap: 0;
+        margin-bottom: 5%;
+    }
+
+    .img-cont img,
+    .person-cont img,
+    .person-cont p {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .img-cont img {
+        object-position: top;
+
+}
+
 @media (max-width: 685px) {
     .result {
         grid-template-columns: repeat(1, 3fr);
