@@ -462,6 +462,9 @@ textarea {
     width: 100%; 
     height: 150px; 
     resize: vertical;
+    border: 0.7px;
+    border-radius: 3px;
+    border-style: groove;
 }
 
 
