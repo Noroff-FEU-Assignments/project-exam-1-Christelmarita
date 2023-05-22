@@ -106,7 +106,10 @@
 
     .carousel-buttons {
         display: flex;
-        flex-direction: column-reverse;
+    }
+
+    .scroll-button {
+        font-size: 0.8em;
     }
 }
 
@@ -136,7 +139,7 @@
 }
 
 @media (max-width: 330px) {
-    
+
     h3 {
         font-size: 1.3em;
     }
