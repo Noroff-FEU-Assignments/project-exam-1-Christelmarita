@@ -74,9 +74,8 @@ a:hover,
 
 button:hover,
 .card:hover {
-    background: var(--cta-hover);
+    background-color: var(--cta-hover);
     text-decoration: none;
-    transition: 0.1s;
 }
 
 a:hover {
