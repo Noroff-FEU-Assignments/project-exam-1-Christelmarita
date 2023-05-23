@@ -32,7 +32,6 @@ searchButton.addEventListener("click", () => {
 
   postContainer.innerHTML = '';
   displayPosts(filteredPosts);
-
   viewMoreContainer.innerHTML = '';
 });
 
@@ -136,6 +135,7 @@ function displayViewMoreButton() {
           postContainer.innerHTML = '';
           const postsToDisplay = posts.slice(0, postsPerPage);
           displayPosts(postsToDisplay);
+          postContainer.scrollIntoView({ behavior: 'smooth', block: 'end' });
       } else {
           currentPage++;
           const startIndex = (currentPage - 1) * postsPerPage;
