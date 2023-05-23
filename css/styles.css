@@ -48,6 +48,10 @@ p {
     font-size: 0.9em
 }
 
+h1 {
+    font-weight: lighter;
+}
+
 
 /* Hover effects */
 
@@ -65,13 +69,13 @@ a:hover,
 }
 
 button:hover,
-a:hover {
-    text-decoration: underline;
+.card:hover {
+    background-color: #E9EBDF;
+    text-decoration: none;
 }
 
-button:hover {
-    background-color: #E5EAEF;
-    text-decoration: none;
+a:hover {
+    text-decoration: underline;
 }
 
 /* NAV */
@@ -153,11 +157,8 @@ a {
 /* LOADER */
 
 .loader {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
+    width: 80px;
+    height: 80px;
     transform: translate(-50%, -50%);
     background-color: #E5EAEF;
     animation-duration: 2s;
@@ -230,7 +231,8 @@ a {
     background-color: rgba(0, 0, 0, 0.5);
   }
 
-.hero {
+.hero,
+.hero-secondary {
     background: url("../images/japandi2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -240,6 +242,11 @@ a {
     background-position-y: center;
     padding: 0px 0px 0px 10%;
     margin-top: 85px; 
+}
+
+.hero-secondary {
+    min-height: 150px;
+    background: #E5EAEF;   
 }
 
 .hero-text {
@@ -255,12 +262,8 @@ a {
     transform: translate(-50%, -50%);
 }
 
-.hero-secondary {
-    min-height: 200px;
-    background: url("../images/hero2.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-y: top;    
+.hero-secondary h1 {
+    color: #333;
 }
 
 /* CAROUSEL */
@@ -356,7 +359,9 @@ a {
 .specific-result {
     display: inline-flex;
     margin-top: 5%;
-}
+    justify-content: center;
+    width: 100%;
+  }
 
 .specific-result img {
     max-width: 100%;

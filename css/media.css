@@ -67,6 +67,7 @@
         grid-template-columns: repeat(2, 3fr);
     }
 
+
   }
 
 @media (max-width: 785px) {

@@ -1,4 +1,4 @@
-import { url, stopLoader, displayErrorMessage, hamburger, navMenu} from "./constant.js";
+import { url, stopLoader, displayErrorMessage, hamburger, navMenu } from "./constant.js";
 
 const postContainer = document.querySelector(".specific-result");
 const modalContainer = document.getElementById("modalContainer");
@@ -8,34 +8,61 @@ const modalImage = document.getElementById("modalImage");
 // HAMBURGER
 
 hamburger.addEventListener("click", () => {
-    console.log("Hamburger clicked!");
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
+  console.log("Hamburger clicked!");
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+});
+
+// FETCH AND CREATE HTML
+
+async function fetchPosts() {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error("Network response was not ok");
+  }
+  return response.json();
+}
+
+function createImage(src, alt, postId, callback) {
+  const image = document.createElement("img");
+  image.src = src;
+  image.alt = alt;
+  image.dataset.postId = postId;
+  image.addEventListener("load", callback);
+
+  // FUNCTION TO OPEN THE MODAL
+  image.addEventListener("click", () => {
+    modalImage.src = src;
+    modalContainer.style.display = "flex";
   });
 
-// FETCH AND CREATE HTML  
+  return image;
+}
 
-fetch(url)
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-    return response.json();
-  })
-  .then(({ id, title, content }) => {
+// MAIN FUNCTION
+async function main() {
+  try {
+    const { id, date, title, content } = await fetchPosts();
 
-    const titleContainer = document.querySelector(".hero-text");
-    const titleElement = document.createElement("h1");
+    const heroContainer = document.querySelector(".hero-text");
+
+    const dateElement = document.createElement("h1");
+    const postDate = new Date(date);
+    const dateOptions = { day: "numeric", month: "numeric", year: "numeric" };
+    const europeanDate = postDate.toLocaleDateString("en-GB", dateOptions);
+    dateElement.innerText = `Blog entry:` + `` + europeanDate;
+
+    heroContainer.append(dateElement);
+
+    const titleElement = document.createElement("h3");
     titleElement.innerText = title.rendered;
-    titleContainer.append(titleElement);
-
     changeSiteTitle(title.rendered);
 
     const textContainer = document.createElement("div");
     textContainer.classList.add("post-text-container");
     const blogTextElement = document.createElement("p");
-    blogTextElement.innerText = new DOMParser().parseFromString(content.rendered, "text/html").body.textContent; 
-    textContainer.append(blogTextElement);
+    blogTextElement.innerText = new DOMParser().parseFromString(content.rendered, "text/html").body.textContent;
+    textContainer.append(titleElement, blogTextElement);
 
     const galleryContainer = document.createElement("div");
     galleryContainer.classList.add("gallery-container");
@@ -51,14 +78,12 @@ fetch(url)
 
     stopLoader();
 
-    document.querySelector(".specific-result").append(postContainer);
-
-  })
-  .catch((error) => {
+  } catch (error) {
     console.error("Error:", error);
-    displayErrorMessage(resultContainer);
+    displayErrorMessage(postContainer);
     stopLoader();
-  });
+  }
+}
 
 // FUNCTION TO GET THE IMAGES FROM API
 
@@ -78,41 +103,19 @@ function getPictures(post) {
   return { imgUrls, imgAlts };
 }
 
-// FUNCTION TO CREATE THE IMAGES
-
-function createImage(src, alt, postId, callback) {
-    const image = document.createElement("img");
-    image.src = src;
-    image.alt = alt;
-    image.dataset.postId = postId;
-    image.addEventListener("load", callback);
-  
-    // FUNCTION TO OPEN THE MODAL
-    image.addEventListener("click", () => {
-      modalImage.src = src;
-      modalContainer.style.display = "flex";
-    });
-  
-    return image;
-  }
-
 // FUNCTION TO CLOSE MODAL
-  
+
 modalOverlay.addEventListener("click", (event) => {
-    if (event.target === modalOverlay) {
-      modalContainer.style.display = "none";
-    }
+  if (event.target === modalOverlay) {
+    modalContainer.style.display = "none";
+  }
 });
-
-// FUNCTION TO CHANGE HERO IMAGE
-
-function changeHeroImage(imageUrl) {
-  const heroSection = document.querySelector(".hero");
-  heroSection.style.backgroundImage = `url(${imageUrl})`;
-}
 
 // FUNCTION TO CHANGE SITE TITLE
 
 function changeSiteTitle(title) {
-    document.title = `SCANDI GAZETTE /` + ` ` + title;
-  }
+  document.title = `SCANDI GAZETTE / ${title}`;
+}
+
+main();
+

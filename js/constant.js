@@ -31,4 +31,4 @@ export {
     displayErrorMessage,
     hamburger,
     navMenu,
-}
+};
