@@ -33,6 +33,7 @@ function createImage(src, alt, postId, callback) {
   // FUNCTION TO OPEN THE MODAL
   image.addEventListener("click", () => {
     modalImage.src = src;
+    modalImage.alt = alt;
     modalContainer.style.display = "flex";
   });
 
