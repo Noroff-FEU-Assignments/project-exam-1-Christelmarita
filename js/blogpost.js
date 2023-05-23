@@ -51,7 +51,7 @@ async function main() {
     const postDate = new Date(date);
     const dateOptions = { day: "numeric", month: "numeric", year: "numeric" };
     const europeanDate = postDate.toLocaleDateString("en-GB", dateOptions);
-    dateElement.innerText = `Blog entry:` + `` + europeanDate;
+    dateElement.innerText = `Blog entry` + ` ` + europeanDate;
 
     heroContainer.append(dateElement);
 

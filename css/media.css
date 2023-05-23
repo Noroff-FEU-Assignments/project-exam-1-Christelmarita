@@ -56,7 +56,7 @@
 
     .gallery-container {
         display: inline-flex;
-        margin-top: -35%;
+        margin-top: 0px;
         width: 141%;
     }
 
