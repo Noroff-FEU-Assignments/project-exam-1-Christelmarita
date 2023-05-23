@@ -57,6 +57,11 @@
     .gallery-container {
         display: inline-flex;
         margin-top: -35%;
+        width: 141%;
+    }
+
+    .specific-result img {
+        margin: 0 2%;
     }
 
     .hero-text {

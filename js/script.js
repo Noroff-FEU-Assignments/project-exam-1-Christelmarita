@@ -25,6 +25,12 @@ function createPostHTML(post) {
   postContainer.classList.add("card");
   postContainer.id = id;
 
+  if (window.innerWidth < 685) {
+    postContainer.addEventListener("click", () => {
+      window.location.href = `../blogpost.html?id=${id}`;
+    });
+  }
+
   const imgContainer = document.createElement("div");
   imgContainer.classList.add("card-img");
   postContainer.append(imgContainer);
@@ -101,35 +107,30 @@ async function main() {
           slideIndex++;
           showSlide(slideIndex);
         }
-  
-        // Show or hide the left scroll button based on the current slide index
         prevButton.style.display = slideIndex > 0 ? "block" : "none";
         };
   
-        const prevSlide = () => {
+    const prevSlide = () => {
         if (slideIndex > 0) {
           slideIndex--;
           showSlide(slideIndex);
         }
-  
-        // Show or hide the left scroll button based on the current slide index
         prevButton.style.display = slideIndex > 0 ? "block" : "none";
         };
   
-        const nextButton = document.querySelector(".scroll-button.right");
-        const prevButton = document.querySelector(".scroll-button.left");
-        nextButton.addEventListener("click", nextSlide);
-        prevButton.addEventListener("click", prevSlide);
+    const nextButton = document.querySelector(".scroll-button.right");
+    const prevButton = document.querySelector(".scroll-button.left");
+    nextButton.addEventListener("click", nextSlide);
+    prevButton.addEventListener("click", prevSlide);
 
-        // Hide the left scroll button initially
-        prevButton.style.display = "none";
+    prevButton.style.display = "none";
 
-        stopLoader();
+    stopLoader();
 
-        } catch (error) {
-        console.error("Error:", error);
-        displayErrorMessage(resultContainer);
-        stopLoader();
+    } catch (error) {
+      console.error("Error:", error);
+      displayErrorMessage(resultContainer);
+      stopLoader();
     }
 }
 

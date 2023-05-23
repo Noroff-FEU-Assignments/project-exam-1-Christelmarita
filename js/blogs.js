@@ -60,6 +60,12 @@ function createPostHTML(post) {
   postContainer.classList.add("card");
   postContainer.id = id;
 
+  if (window.innerWidth < 685) {
+    postContainer.addEventListener("click", () => {
+      window.location.href = `../blogpost.html?id=${id}`;
+    });
+  }
+
   const imgContainer = document.createElement("div");
   imgContainer.classList.add("card-img");
 
@@ -109,6 +115,8 @@ function displayPosts(postsToDisplay) {
 
   postContainer.appendChild(fragment);
 }
+
+// VIEW MORE FUNCTION
 
 function displayViewMoreButton() {
   const viewMoreButton = document.createElement("button");

@@ -1,16 +1,18 @@
 import {hamburger, navMenu } from "./constant.js";
 
 const form = document.querySelector("#form-container");
-const firstNameInput = document.querySelector("#first-name");
+const firstNameInput = document.querySelector('input[name="your-name"]');
 const firstNameError = document.querySelector("#first-name-error");
-const emailInput = document.querySelector("#email");
+const emailInput = document.querySelector('input[name="your-email"]');
 const emailError = document.querySelector("#email-error");
-const subjectInput = document.querySelector("#subject");
+const subjectInput = document.querySelector('input[name="your-subject"]');
 const subjectError = document.querySelector("#subject-error");
-const messageInput = document.querySelector("#message");
+const messageInput = document.querySelector('textarea[name="your-message"]');
 const messageError = document.querySelector("#message-error");
 const button = document.querySelector(".submitForm");
 const formSuccess = document.querySelector(".formSuccess");
+
+// HAMBURGER
 
 hamburger.addEventListener("click", () => {
     console.log("Hamburger clicked!");
@@ -18,7 +20,8 @@ hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("active");
   });
 
-
+// FORM VALIDATION
+  
 function formValidation(event) {
     event.preventDefault();
     let formError = false;
@@ -54,20 +57,48 @@ function formValidation(event) {
     if (formError) {
         formSuccess.style.display = "none";
     } else {
-        form.style.display = "none";
-        formSuccess.style.display = "contents";
-        document.querySelector("h1").style.display = "none";
-        document.querySelector(".contact-wrapper p").style.display = "none";
+        // POST FORM
+        const formId = "120";
+        const formURL = `https://examproject1.onibodesign.no/wp-json/contact-form-7/v1/contact-forms/${formId}/feedback`;
+        const formData = new FormData();
+        formData.append('your-name', firstNameInput.value.trim());
+        formData.append('your-email', emailInput.value.trim());
+        formData.append('your-subject', subjectInput.value.trim());
+        formData.append('your-message', messageInput.value.trim());
+
+        fetch(formURL, {
+            method: 'POST',
+            body: formData
+        })
+        .then(function (response) {
+            if (response.ok) {
+                form.style.display = "none";
+                formSuccess.style.display = "contents";
+                document.querySelector("h1").style.display = "none";
+                document.querySelector(".contact-wrapper p").style.display = "none";
+                window.scrollTo({ top: 1, behavior: 'smooth' });
+            } else {
+                throw new Error('Form submission failed');
+            }
+        })
+        .catch(function (error) {
+            console.error(error);
+        });
     }
 }
 
 form.addEventListener("submit", formValidation);
 
+// CHECK LENGTH
+
 function checkingLength(value, len) {
     return value.length >= len;
 }
+
+// CHECK IF IT´S AN EMAIL
 
 function validateEmail(email) {
     const regEx = /\S+@\S+\.\S+/;
     return regEx.test(email);
 }
+  
