@@ -16,6 +16,30 @@ hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("active");
 });
 
+// SEARCH BAR FUNCTIONALITY
+
+const searchInput = document.querySelector("#searchInput");
+const searchButton = document.querySelector("#searchButton");
+
+searchButton.addEventListener("click", () => {
+  const searchTerm = searchInput.value.trim().toLowerCase();
+
+  const filteredPosts = posts.filter(post => {
+    const title = post.title.rendered.toLowerCase();
+    const content = post.content.rendered.toLowerCase();
+    return title.includes(searchTerm) || content.includes(searchTerm);
+  });
+
+  postContainer.innerHTML = '';
+  displayPosts(filteredPosts);
+});
+
+searchInput.addEventListener("keydown", event => {
+  if (event.key === "Enter") {
+    searchButton.click();
+  }
+});
+
 // FETCH AND CREATE HTML  
 
 async function getPosts() {

@@ -316,6 +316,25 @@ a {
     margin: 2% 10%;
 }
 
+/* SEARCH BAR */
+
+#searchContainer {
+    display: flex;
+    justify-content: end;
+    align-items: baseline;
+    gap: 1%;
+    margin: 10px 0px 20px 0px;
+}
+
+#searchButton {
+    justify-self: flex-end;
+}
+
+#searchInput {
+    max-width: 50%;
+    height: fit-content;
+}
+
 /* RESULTS */
 
 .result {
@@ -326,7 +345,7 @@ a {
 }
 
 .card {
-    max-width: 350px;
+    max-width: 100%;
     max-height: fit-content;
     background-color: #fff;
     position: relative;

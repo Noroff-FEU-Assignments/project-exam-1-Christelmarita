@@ -119,6 +119,10 @@
     .scroll-button {
         font-size: 0.8em;
     }
+
+    #searchInput {
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 465px) {
@@ -150,6 +154,10 @@
 
     .text-container {
         height: fit-content;
+    }
+
+    #searchButton {
+        display: none;
     }
 
 }
