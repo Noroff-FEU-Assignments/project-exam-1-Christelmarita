@@ -32,6 +32,8 @@ searchButton.addEventListener("click", () => {
 
   postContainer.innerHTML = '';
   displayPosts(filteredPosts);
+
+  viewMoreContainer.innerHTML = '';
 });
 
 searchInput.addEventListener("keydown", event => {
@@ -39,6 +41,7 @@ searchInput.addEventListener("keydown", event => {
     searchButton.click();
   }
 });
+
 
 // FETCH AND CREATE HTML  
 
