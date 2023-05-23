@@ -74,7 +74,7 @@ a:hover,
 
 button:hover,
 .card:hover {
-    background-color: #E9EBDF;
+    background: var(--cta-hover);
     text-decoration: none;
     transition: 0.1s;
 }
