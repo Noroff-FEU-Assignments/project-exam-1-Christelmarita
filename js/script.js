@@ -108,6 +108,7 @@ async function main() {
           showSlide(slideIndex);
         }
         prevButton.style.display = slideIndex > 0 ? "block" : "none";
+        resultContainer.scrollIntoView({ behavior: "smooth" });
         };
   
     const prevSlide = () => {
@@ -116,6 +117,7 @@ async function main() {
           showSlide(slideIndex);
         }
         prevButton.style.display = slideIndex > 0 ? "block" : "none";
+        resultContainer.scrollIntoView({ behavior: "smooth" });
         };
   
     const nextButton = document.querySelector(".scroll-button.right");
