@@ -56,32 +56,6 @@ img {
     border-radius: 3px;
 }
 
-
-/* Hover effects */
-
-.card img:hover,
-.logo:hover,
-button:hover,
-a:hover,
-.specific-result img:hover  {
-    cursor: pointer;
-}
-
-.card img:hover,
-.logo:hover {
-    filter:opacity(0.7);
-}
-
-button:hover,
-.card:hover {
-    background-color: var(--cta-hover);
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
 /* NAV */
 
 
@@ -588,4 +562,29 @@ footer {
     color: #e84d00;
     text-align: center;
     display: block;
+}
+
+/* Hover effects */
+
+.card img:hover,
+.logo:hover,
+button:hover,
+a:hover,
+.specific-result img:hover  {
+    cursor: pointer;
+}
+
+.card img:hover,
+.logo:hover {
+    filter:opacity(0.7);
+}
+
+button:hover,
+.card:hover {
+    background-color: var(--cta-hover);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
