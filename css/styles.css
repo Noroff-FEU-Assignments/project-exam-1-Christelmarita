@@ -405,7 +405,7 @@ a {
 form {
     padding: 3% 10%;
     margin-top: 2%;
-    background: #fff;
+    background: #E5EAEF;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -436,12 +436,13 @@ label {
     color:#10141b
 }
 
-input {
+input,
+textarea {
     width: 100%;
     padding: 5px;
     margin-top: 1%;
     font-size: 1em;
-    border: 0.7px;
+    border: 1px;
     border-radius: 3px;
     border-style: groove;
 }
