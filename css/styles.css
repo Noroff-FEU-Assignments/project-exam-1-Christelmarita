@@ -52,6 +52,10 @@ h1 {
     font-weight: lighter;
 }
 
+img {
+    border-radius: 3px;
+}
+
 
 /* Hover effects */
 
