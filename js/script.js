@@ -108,7 +108,7 @@ async function main() {
           showSlide(slideIndex);
         }
         prevButton.style.display = slideIndex > 0 ? "block" : "none";
-        resultContainer.scrollIntoView({ behavior: "smooth", block: "start"});
+        resultContainer.scrollIntoView({ behavior: "smooth", block: "center"});
         };
   
     const prevSlide = () => {
