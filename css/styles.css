@@ -316,6 +316,8 @@ a {
 #searchInput {
     max-width: 50%;
     height: fit-content;
+    border: 0.8px;
+    border-style: solid;
 }
 
 /* RESULTS */
