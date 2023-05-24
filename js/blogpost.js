@@ -73,8 +73,6 @@ async function main() {
     galleryContainer.classList.add("gallery-container");
     const { imgUrls, imgAlts } = getPictures(content.rendered);
     const image1 = createImage(imgUrls[0], imgAlts[0], id, () => {
-      const heroImageUrl = imgUrls[0];
-      changeHeroImage(heroImageUrl);
     });
     const image2 = createImage(imgUrls[1], imgAlts[1], id);
     galleryContainer.append(image1, image2);
