@@ -8,6 +8,7 @@ body {
     flex-direction: column;
 }
 
+h2,
 a,
 h3,
 p,
@@ -21,39 +22,45 @@ input {
 }
 
 h1,
-h2,
 h4,
 h5 {
     font-family: var(--text-other);
 }
 
-
-h2 {
-    font-weight: 200;
-    text-align: center;
-    padding: 2% 5%;
-    
+h1 {
+    font-weight: lighter;
+    font-size: 28px;
 }
 
 h3,
 h2 {
-    font-size: 1.5em;
+    font-size: 20px;
+}
+
+h2 {
+    font-weight: 200;
+    text-align: center;
+    padding: 2% 0%;
 }
 
 h4 {
-    font-size: 1.3em;
+    font-size: 18px;
 }
 
-p {
-    font-size: 0.9em
-}
-
-h1 {
-    font-weight: lighter;
+p,
+button,
+a,
+label {
+    font-size: 16px;
 }
 
 img {
     border-radius: 3px;
+}
+
+.page-wrapper,
+.contact-wrapper {
+    margin: 2% 10%;
 }
 
 /* NAV */
@@ -106,13 +113,13 @@ a {
 }
   
 .nav-menu li {
-    margin: 0 10px;
+    margin: 0 20px;
     display: inline-block;
     flex-grow: 1;
 }
   
 .navbar-menu a {
-    font-size: 1.2rem;
+    font-size: 22px;
     text-decoration: none;
 }
 
@@ -210,7 +217,8 @@ a {
   }
 
 .hero,
-.hero-secondary {
+.hero-secondary,
+.hero-third {
     background: url("../images/japandi2.jpg");
     background-color: #333;
     background-size: cover;
@@ -224,15 +232,19 @@ a {
 }
 
 
-.hero-secondary {
+.hero-secondary,
+.hero-third {
     min-height: 150px;
-    background: #E5EAEF;   
+    background: #F2ECE6;   
+}
+
+.hero-third {
+    background: #E9EBDF;   
 }
 
 .hero-text {
     position: relative;
     color: #fff;
-    font-size: 1.5em;
     font-weight: lighter;
     width: 60%;
     text-align: center;
@@ -242,7 +254,8 @@ a {
     transform: translate(-50%, -50%);
 }
 
-.hero-secondary h1 {
+.hero-secondary h1,
+.hero-third h1 {
     color: #333;
 }
 
@@ -272,7 +285,6 @@ a {
 
 .scroll-button {
     background-color: #f8f8f8;
-    font-size: 1em;
     border: none;
     display: inline-flex;
     align-items: center;
@@ -290,10 +302,6 @@ a {
 
 .scroll-button.right {
     margin-left: auto;
-}
-
-.page-wrapper {
-    margin: 2% 10%;
 }
 
 /* SEARCH BAR */
@@ -387,7 +395,6 @@ a {
 /* CONTACT */
 
 .contact-wrapper {
-    margin: 100px 10%;
     color: #333;
     display: flex;
     flex-direction: column;
@@ -409,10 +416,12 @@ a {
 form {
     padding: 3% 10%;
     margin-top: 2%;
-    background: #E5EAEF;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 0.7px;
+    border-color: #333;
+    border-style: solid;
 }
 
 .form-error,
@@ -428,7 +437,6 @@ form {
 button {
     background: #fff;
     color: #333;
-    font-weight:bold;
     width: 150px;
     padding: 8px;
     margin-top: 20px;
@@ -437,7 +445,7 @@ button {
 
 form h1,
 label {
-    color:#10141b
+    color:#333;
 }
 
 input,
@@ -445,7 +453,7 @@ textarea {
     width: 100%;
     padding: 5px;
     margin-top: 1%;
-    font-size: 1em;
+    font-size: 16px;
     border: 1px;
     border-radius: 3px;
     border-style: groove;
@@ -454,17 +462,13 @@ textarea {
 .form-error {
     color: #ff0000;
     margin-top: 2px;
-    font-size: 0.8em;
+    font-size: 16px;
     display: none;
 }
 
 .input-container {
     margin-top: 20px;
     width: 100%;
-}
-
-label {
-    font-size: 1em;
 }
 
 textarea {
@@ -538,7 +542,7 @@ footer {
 }
 
 .break {
-    background-color: #E5EAEF;
+    background-color: #F2ECE6;
     padding: 2% 10%;
     margin: 2% 0;
     text-align: center;
