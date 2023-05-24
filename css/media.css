@@ -48,8 +48,7 @@
         transform: translateX(-10%);
     }
 
-    .hero-secondary,
-    .hero-third {
+    .hero-large {
         min-height: 400px;  
     }
 

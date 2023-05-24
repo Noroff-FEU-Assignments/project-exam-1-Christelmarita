@@ -103,22 +103,29 @@ async function main() {
     showSlide(slideIndex);
 
     const nextSlide = () => {
-        if (slideIndex < totalSlidesPerView - 1) {
-          slideIndex++;
-          showSlide(slideIndex);
-        }
-        prevButton.style.display = slideIndex > 0 ? "block" : "none";
-        resultContainer.scrollIntoView({ behavior: "smooth", block: "center"});
-        };
+      if (slideIndex < totalSlidesPerView - 1) {
+        slideIndex++;
+        showSlide(slideIndex);
+      }
+      prevButton.style.display = slideIndex > 0 ? "block" : "none";
+
+      if (window.innerWidth < 685) {
+        resultContainer.scrollIntoView({ behavior: "smooth", block: "start" });
+      };
+    };
   
     const prevSlide = () => {
-        if (slideIndex > 0) {
-          slideIndex--;
-          showSlide(slideIndex);
-        }
-        prevButton.style.display = slideIndex > 0 ? "block" : "none";
-        resultContainer.scrollIntoView({ behavior: "smooth" });
-        };
+      if (slideIndex > 0) {
+        slideIndex--;
+        showSlide(slideIndex);
+      }
+
+      prevButton.style.display = slideIndex > 0 ? "block" : "none";
+
+      if (window.innerWidth < 685) {
+        resultContainer.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      };
+    };
   
     const nextButton = document.querySelector(".scroll-button.right");
     const prevButton = document.querySelector(".scroll-button.left");
