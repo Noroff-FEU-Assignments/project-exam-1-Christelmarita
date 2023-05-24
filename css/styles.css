@@ -87,7 +87,6 @@ img {
 a {
     text-decoration: none;
     display: block;
-    padding: auto;
     color: var(--font-one);
 }
 
