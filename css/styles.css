@@ -28,7 +28,7 @@ h5 {
 
 h1 {
     font-weight: lighter;
-    font-size: 28px;
+    font-size: 26px;
 }
 
 h3,
@@ -241,7 +241,7 @@ a {
     position: relative;
     color: var(--primary);
     font-weight: lighter;
-    width: 60%;
+    width: 70%;
     text-align: center;
     position: absolute;
     top: 50%;
