@@ -1,7 +1,14 @@
 :root {
+    /* FONT */
     --text-main:"montserrat";
     --text-other:"bodoni moda";
-    --cta-primary: #fff;
-    --cta-hover: #E9EBDF;
-    --cta-disabled: #A49DA2;
+
+    /* COLORS */
+    --background: #f8f8f8;
+    --primary: #fff;
+    --secondary: #E9EBDF;
+    --third: #F2ECE6;
+    --disabled: #A49DA2;
+    --font-one: #333;
+    --error: rgb(117, 27, 27);
 }

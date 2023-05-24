@@ -43,27 +43,31 @@ function createImage(src, alt, postId, callback) {
 // MAIN FUNCTION
 async function main() {
   try {
-    const { id, date, title, content } = await fetchPosts();
+    const { id, date, title, excerpt, content } = await fetchPosts();
 
     const heroContainer = document.querySelector(".hero-text");
 
-    const dateElement = document.createElement("h1");
+    const titleElement = document.createElement("h1");
+    titleElement.innerText = title.rendered;
+    changeSiteTitle(title.rendered);
+
+    heroContainer.append(titleElement);
+
+    const dateElement = document.createElement("h2");
+    dateElement.classList.add("specific-h2");
     const postDate = new Date(date);
     const dateOptions = { day: "numeric", month: "numeric", year: "numeric" };
     const europeanDate = postDate.toLocaleDateString("en-GB", dateOptions);
     dateElement.innerText = `Blog entry` + ` ` + europeanDate;
 
-    heroContainer.append(dateElement);
-
-    const titleElement = document.createElement("h3");
-    titleElement.innerText = title.rendered;
-    changeSiteTitle(title.rendered);
+    const excerptElement = document.createElement("h3");
+    excerptElement.innerText = new DOMParser().parseFromString(excerpt.rendered, "text/html").body.textContent;
 
     const textContainer = document.createElement("div");
     textContainer.classList.add("post-text-container");
     const blogTextElement = document.createElement("p");
     blogTextElement.innerText = new DOMParser().parseFromString(content.rendered, "text/html").body.textContent;
-    textContainer.append(titleElement, blogTextElement);
+    textContainer.append(dateElement, excerptElement, blogTextElement);
 
     const galleryContainer = document.createElement("div");
     galleryContainer.classList.add("gallery-container");

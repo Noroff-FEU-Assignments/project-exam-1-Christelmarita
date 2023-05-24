@@ -48,6 +48,11 @@
         transform: translateX(-10%);
     }
 
+    .hero-secondary,
+    .hero-third {
+        min-height: 400px;  
+    }
+
     .specific-result {
         display: flex;
         flex-direction: column;
