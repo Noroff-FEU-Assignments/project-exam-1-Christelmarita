@@ -102,12 +102,9 @@
     .img-cont img {
         object-position: top;
     }
-    .page-wrapper {
-        margin: 2%;
-    }
-
+    .page-wrapper,
     .contact-wrapper {
-        margin: 100px 2%;
+        margin: 2%;
     }
 }
 

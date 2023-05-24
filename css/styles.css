@@ -139,7 +139,6 @@ a {
 .loader {
     width: 80px;
     height: 80px;
-    transform: translate(-50%, -50%);
     background-color: var(--third);
     animation-duration: 2s;
     animation-iteration-count: infinite;
@@ -147,6 +146,8 @@ a {
     animation: rotatingCircle 2.4s infinite;
     border-radius: 50%;
     display: block;
+    justify-self: center;
+    position: absolute;
   }
   
 
@@ -260,8 +261,7 @@ a {
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    overflow: hidden;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
   
