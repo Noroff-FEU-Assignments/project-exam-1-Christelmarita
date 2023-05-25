@@ -6,6 +6,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    margin: 0;
 }
 
 h2,
@@ -13,6 +14,7 @@ a,
 h3,
 p,
 label,
+button,
 .scroll-button,
 .form-error,
 .formSuccess,
@@ -28,7 +30,7 @@ h5 {
 
 h1 {
     font-weight: lighter;
-    font-size: 26px;
+    font-size: 30px;
 }
 
 h3,
@@ -49,13 +51,17 @@ label {
     font-size: 16px;
 }
 
+button {
+    font-weight: 500;
+}
+
 img {
     border-radius: 3px;
 }
 
 .page-wrapper,
 .contact-wrapper {
-    margin: 2% 10%;
+    margin: 5% 10%;
 }
 
 /* NAV */
@@ -357,6 +363,28 @@ a {
     bottom: 4%;
 }
 
+/* INDEX */
+
+.cta-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 2% 5%;
+    background: var(--third);
+}
+  
+.cta-img img {
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
+    object-position: 0px -28px;
+}
+
+.page-wrapper + .page-wrapper {
+    border-top: 1px solid #000;
+    padding-top: 5%;
+  }
+
+
 /* SPECIFIC POST */
 
 .specific-result {
@@ -441,6 +469,9 @@ button {
     padding: 8px;
     margin-top: 20px;
     text-transform: uppercase;
+    border: 1px;
+    border-style: solid;
+    border-color: var(--text-other);
 }
 
 form h1,
