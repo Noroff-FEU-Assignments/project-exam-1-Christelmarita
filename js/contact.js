@@ -76,7 +76,11 @@ function formValidation(event) {
                 form.style.display = "none";
                 formSuccess.style.display = "contents";
                 document.querySelector("h1").style.display = "none";
-                document.querySelector(".hero-secondary").style.display = "none";
+                const heroElement = document.querySelector(".hero-secondary");
+                heroElement.style.backgroundColor = "var(--background)";
+                heroElement.style.minHeight = "100px";
+                document.querySelector(".contact-wrapper").style.marginBottom = "20%";
+                document.querySelector("footer").style.position = "absolute";
 
                 window.scrollTo({ top: 1, behavior: 'smooth' });
             } else {
