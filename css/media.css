@@ -129,6 +129,10 @@
     #searchInput {
         max-width: 100%;
     }
+
+    .specific-result {
+        flex-direction: column-reverse;
+    }
 }
 
 @media (max-width: 465px) {

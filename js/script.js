@@ -79,16 +79,16 @@ async function main() {
 
     posts.forEach((post) => {
       const postHTML = createPostHTML(post);
-      fragment.appendChild(postHTML);
+      fragment.append(postHTML);
     });
 
     resultContainer.innerHTML = '';
-    resultContainer.appendChild(fragment);
+    resultContainer.append(fragment);
 
-    const slides = Array.from(resultContainer.children);
-    const slidesPerView = 3;
-    const totalSlidesPerView = Math.ceil(slides.length / slidesPerView);
-    let slideIndex = 0;
+  const slides = Array.from(resultContainer.children);
+  const slidesPerView = 3;
+  const totalSlidesPerView = slides.length / slidesPerView;
+  let slideIndex = 0;
     
 
     const showSlide = (index) => {

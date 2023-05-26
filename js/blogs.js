@@ -109,10 +109,10 @@ function displayPosts(postsToDisplay) {
 
   postsToDisplay.forEach((post) => {
       const postHTML = createPostHTML(post);
-      fragment.appendChild(postHTML);
+      fragment.append(postHTML);
   });
 
-  postContainer.appendChild(fragment);
+  postContainer.append(fragment);
 }
 
 // VIEW MORE FUNCTION
@@ -151,7 +151,7 @@ function displayViewMoreButton() {
   });
 
   viewMoreContainer.innerHTML = '';
-  viewMoreContainer.appendChild(viewMoreButton);
+  viewMoreContainer.append(viewMoreButton);
 }
 
 // MAIN FUNCTION 

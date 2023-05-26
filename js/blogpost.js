@@ -121,4 +121,3 @@ function changeSiteTitle(title) {
 }
 
 main();
-
