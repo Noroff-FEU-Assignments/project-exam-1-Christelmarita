@@ -43,7 +43,7 @@ searchInput.addEventListener("keydown", event => {
 });
 
 
-// FETCH AND CREATE HTML  
+// FETCH POSTS AND CREATE HTML  
 
 async function getPosts() {
     const response = await fetch(fullPostURL);
