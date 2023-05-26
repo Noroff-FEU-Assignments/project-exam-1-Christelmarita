@@ -9,8 +9,10 @@ const subjectInput = document.querySelector('input[name="your-subject"]');
 const subjectError = document.querySelector("#subject-error");
 const messageInput = document.querySelector('textarea[name="your-message"]');
 const messageError = document.querySelector("#message-error");
-const button = document.querySelector(".submitForm");
+const submitButton = document.querySelector(".submitForm");
 const formSuccess = document.querySelector(".formSuccess");
+const inputs = document.querySelectorAll("input");
+const labels = document.querySelectorAll("label");
 
 // HAMBURGER
 
@@ -73,22 +75,30 @@ function formValidation(event) {
         })
         .then(function (response) {
             if (response.ok) {
-                form.style.display = "none";
-                formSuccess.style.display = "contents";
+                inputs.forEach((input) => {
+                    input.style.display = "none";
+                });
+                  
+                labels.forEach((label) => {
+                    label.style.display = "none";
+                });
+                document.querySelector("textarea").style.display = "none";
+                document.querySelector(".leave-message").style.display = "none";
                 document.querySelector("h1").style.display = "none";
                 const heroElement = document.querySelector(".hero-secondary");
+                submitButton.style.display = "none";
                 heroElement.style.backgroundColor = "var(--background)";
                 heroElement.style.minHeight = "100px";
-                document.querySelector(".contact-wrapper").style.marginBottom = "20%";
-
+                formSuccess.style.display = "contents";
                 window.scrollTo({ top: 1, behavior: 'smooth' });
+
             } else {
-                throw new Error('Form submission failed');
+              throw new Error('Form submission failed');
             }
-        })
-        .catch(function (error) {
+          })
+          .catch(function (error) {
             console.error(error);
-        });
+          });
     }
 }
 

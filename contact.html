@@ -54,7 +54,12 @@
         </section>    
         <div class="contact-wrapper">
             <form id="form-container">
-                <h2>Leave a message, let us know your thoughts.</h2>
+                <div class="formSuccess">
+                    <h2>Your message has been sent!</h2>
+                    <p>We´ll get back to you as soon as possible.</p>
+                    <button onclick="window.location.href='index.html'">Keep exploring</button>
+                </div>
+                <h2 class="leave-message">Leave a message, let us know your thoughts.</h2>
                 <div class="input-container">
                     <label for="first-name">Your name (Required)</label>
                     <input id="first-name" name="your-name" type="text" placeholder="Your name">
@@ -77,11 +82,6 @@
                 </div>
                 <button type="submit" class="submitForm">Send</button>
             </form>
-            <div class="formSuccess">
-                <h2>Message Sent Successfully!</h2>
-                <p>Thank you for contacting us.</p>
-                <button onclick="window.location.href='index.html'">Keep exploring</button>
-            </div>
         </div>   
     </main>    
     <footer>
