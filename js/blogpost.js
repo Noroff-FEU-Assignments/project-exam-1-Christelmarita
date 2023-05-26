@@ -19,17 +19,17 @@ hamburger.addEventListener("click", () => {
 async function fetchPosts() {
   const response = await fetch(url);
   if (!response.ok) {
-    throw new Error("Network response was not ok");
+    throw new Error("There is something wrong with the response");
   }
   return response.json();
 }
 
-function createImage(src, alt, postId, callback) {
+function createImage(src, alt, postId, imageLoad) {
   const image = document.createElement("img");
   image.src = src;
   image.alt = alt;
   image.dataset.postId = postId;
-  image.addEventListener("load", callback);
+  image.addEventListener("load", imageLoad);
 
   // FUNCTION TO OPEN THE MODAL
   image.addEventListener("click", () => {

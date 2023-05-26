@@ -9,22 +9,22 @@ hamburger.addEventListener("click", () => {
 
 // SCROLL EFFECT ON QUOTE ELEMENT
 
-function fadeInOnScroll() {
-    var breakDiv = document.querySelector('.break');
-    var breakDivOffset = breakDiv.offsetTop;
+function scrollFadeIn() {
+    var breakElement = document.querySelector('.break');
+    var breakElementOffset = breakElement.offsetTop;
     var windowHeight = window.innerHeight;
 
-    function handleScroll() {
+    function useScroll() {
         var scrollTop = window.scrollY;
 
-        if (scrollTop + (windowHeight * 0.8) > breakDivOffset) {
-            breakDiv.classList.add('visible');
+        if (scrollTop + (windowHeight * 0.8) > breakElementOffset) {
+            breakElement.classList.add('visible');
         } else {
-            breakDiv.classList.remove('visible');
+            breakElement.classList.remove('visible');
         }
     }
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', useScroll);
 }
 
-fadeInOnScroll();
+scrollFadeIn();

@@ -76,7 +76,8 @@ function formValidation(event) {
                 form.style.display = "none";
                 formSuccess.style.display = "contents";
                 document.querySelector("h1").style.display = "none";
-                document.querySelector(".contact-wrapper p").style.display = "none";
+                document.querySelector(".hero-secondary").style.display = "none";
+
                 window.scrollTo({ top: 1, behavior: 'smooth' });
             } else {
                 throw new Error('Form submission failed');

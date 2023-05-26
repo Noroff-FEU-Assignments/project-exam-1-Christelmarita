@@ -48,7 +48,7 @@ searchInput.addEventListener("keydown", event => {
 async function getPosts() {
     const response = await fetch(fullPostURL);
     if (!response.ok) {
-        throw new Error("Network response was not ok");
+        throw new Error("There is something wrong with the Response");
     }
     return await response.json();
 }
