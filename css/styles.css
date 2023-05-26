@@ -264,7 +264,7 @@ a {
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
-    animation: fade-in 0.7s cubic-bezier(0.3, 0, 0.2, 1) forwards;
+    animation: fade-in 0.9s cubic-bezier(0.3, 0, 0.2, 1) forwards;
 }
   
 @keyframes fade-in {
