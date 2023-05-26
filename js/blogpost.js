@@ -66,7 +66,9 @@ async function main() {
     const textContainer = document.createElement("div");
     textContainer.classList.add("post-text-container");
     const blogTextElement = document.createElement("p");
-    blogTextElement.innerText = new DOMParser().parseFromString(content.rendered, "text/html").body.textContent;
+    blogTextElement.innerHTML = new DOMParser().parseFromString(content.rendered, "text/html").body.innerHTML;
+    blogTextElement.querySelectorAll("br").forEach((br) => br.remove());
+    blogTextElement.querySelectorAll("img").forEach((img) => img.remove());
     textContainer.append(dateElement, excerptElement, blogTextElement);
 
     const galleryContainer = document.createElement("div");
