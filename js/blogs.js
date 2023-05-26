@@ -11,9 +11,10 @@ let isAllDisplayed = false;
 // HAMBURGER MENU 
 
 hamburger.addEventListener("click", () => {
-    console.log("Hamburger clicked!");
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
+  console.log("Hamburger clicked!");
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+  document.querySelector(".dark-underlay").classList.toggle("show-underlay");
 });
 
 // SEARCH BAR FUNCTIONALITY

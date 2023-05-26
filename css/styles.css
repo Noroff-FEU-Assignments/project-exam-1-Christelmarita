@@ -113,15 +113,11 @@ a {
 }
   
 .nav-menu li {
-    margin: 0 20px;
+    margin: 0px 20px;
     display: inline-block;
     flex-grow: 1;
 }
-  
-.navbar-menu a {
-    font-size: 22px;
-    text-decoration: none;
-}
+
 
 .hamburger {
     display: none;
@@ -136,6 +132,21 @@ a {
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     background-color: var(--font-one);
+}
+
+.dark-underlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(61, 61, 61, 0.4);
+    display: none;
+}
+
+.show-underlay {
+    display: block;
 }
 
 
@@ -196,6 +207,7 @@ a {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
+    backdrop-filter: blur(2px);
 }
   
 .modal-image {

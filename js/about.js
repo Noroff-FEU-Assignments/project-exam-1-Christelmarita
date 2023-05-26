@@ -1,10 +1,13 @@
 import {hamburger, navMenu } from "./constant.js";
 
 hamburger.addEventListener("click", () => {
-  console.log("Hamburger clicked!");
-  hamburger.classList.toggle("active");
-  navMenu.classList.toggle("active");
-});
+    console.log("Hamburger clicked!");
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+    document.querySelector(".dark-underlay").classList.toggle("show-underlay");
+  });
+
+// SCROLL EFFECT ON QUOTE ELEMENT
 
 function fadeInOnScroll() {
     var breakDiv = document.querySelector('.break');
