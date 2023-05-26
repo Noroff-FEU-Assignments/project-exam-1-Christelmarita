@@ -362,6 +362,7 @@ a {
     height: 100%;
     object-fit: cover;
 }
+  
 
 .text-container {
     padding: 2% 5%;
@@ -626,7 +627,7 @@ footer {
 
 /* Hover effects */
 
-.card img:hover,
+.card:hover,
 .logo:hover,
 button:hover,
 a:hover,
@@ -634,7 +635,10 @@ a:hover,
     cursor: pointer;
 }
 
-.card img:hover,
+.card:hover img {
+    opacity: 0.7;
+  }
+
 .logo:hover {
     filter:opacity(0.7);
 }
