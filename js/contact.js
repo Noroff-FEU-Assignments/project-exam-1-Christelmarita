@@ -80,7 +80,6 @@ function formValidation(event) {
                 heroElement.style.backgroundColor = "var(--background)";
                 heroElement.style.minHeight = "100px";
                 document.querySelector(".contact-wrapper").style.marginBottom = "20%";
-                document.querySelector("footer").style.position = "absolute";
 
                 window.scrollTo({ top: 1, behavior: 'smooth' });
             } else {
