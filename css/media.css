@@ -55,17 +55,20 @@
     .specific-result {
         display: flex;
         flex-direction: column;
-        width: 34%;
+        width: 100%;
+        min-height: 80px
     }
 
     .gallery-container {
         display: inline-flex;
         margin-top: 0px;
-        width: 141%;
+        width: 100%;
+        gap: 2%;
     }
 
     .specific-result img {
-        margin: 0 2%;
+        margin: 0 0;
+        max-width: 50%;
     }
 
     .hero-text {

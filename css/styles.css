@@ -30,8 +30,8 @@ h5 {
 }
 
 h1 {
-    font-weight: lighter;
     font-size: 30px;
+    font-weight: lighter;
 }
 
 h3,
@@ -154,8 +154,8 @@ a {
 /* LOADER */
 
 .loader {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     background-color: var(--third);
     animation-duration: 2s;
     animation-iteration-count: infinite;
@@ -163,6 +163,7 @@ a {
     animation: rotatingCircle 2.4s infinite;
     border-radius: 50%;
     display: block;
+    align-self: center;
     justify-self: center;
     position: absolute;
   }
@@ -418,10 +419,6 @@ a {
 
 .specific-result h2 {
     text-align: start;
-}
-
-.post-text-container {
-    width: 300%;
 }
 
 .view-more {

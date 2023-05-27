@@ -59,7 +59,7 @@ async function main() {
     const postDate = new Date(date);
     const dateOptions = { day: "numeric", month: "numeric", year: "numeric" };
     const europeanDate = postDate.toLocaleDateString("en-GB", dateOptions);
-    dateElement.innerText = `Blog entry` + ` ` + europeanDate;
+    dateElement.innerText = europeanDate;
 
     const excerptElement = document.createElement("h3");
     excerptElement.innerText = new DOMParser().parseFromString(excerpt.rendered, "text/html").body.textContent;
