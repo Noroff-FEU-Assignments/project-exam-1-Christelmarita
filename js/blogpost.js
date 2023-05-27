@@ -52,6 +52,9 @@ async function main() {
     titleElement.innerText = title.rendered;
     changeSiteTitle(title.rendered);
 
+    const metaDescription = document.getElementById("metaDescription");
+    metaDescription.setAttribute("content", `Read our blog post called` + ` ` + `"` + title.rendered + `"`);
+
     heroContainer.append(titleElement);
 
     const dateElement = document.createElement("h2");
